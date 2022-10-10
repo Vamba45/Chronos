@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chronos.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="900"
       Title="Добавление и редактирование"
       Style="{StaticResource base_page}"
       IsVisibleChanged="Page_IsVisibleChanged">
@@ -46,27 +46,27 @@
         <TextBlock Grid.Row="10" Grid.Column="0" Text="История работ:"
                     Margin="20 0" Height="30" VerticalAlignment="Top"/>
 
-        <Grid Grid.Row="1" Grid.Column="2">
+        <Grid Grid.Row="1" Grid.Column="2" Margin="0 0 20 0">
             <Grid.RowDefinitions>
                 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0">Фамилия:</TextBlock>
-            <TextBox Grid.Column="1" Text="{Binding EmplSurname}" x:Name="TB_SurName"></TextBox>
-            
-            <TextBlock Grid.Column="2" Margin="5 0 0 0">Имя:</TextBlock>
-            <TextBox Grid.Column="3" Text="{Binding EmplName}" x:Name="TB_Name"></TextBox>
-            
-            <TextBlock Grid.Column="4" Margin="5 0 0 0">Отчество:</TextBlock>
-            <TextBox Grid.Column="5" Text="{Binding FatherName}" x:Name="TB_FatherName"></TextBox>
+            <TextBlock VerticalAlignment="Center" Grid.Column="0">Фамилия:</TextBlock>
+            <TextBox  VerticalAlignment="Center" Grid.Column="1" Text="{Binding EmplSurname}" x:Name="TB_SurName"></TextBox>
+
+            <TextBlock VerticalAlignment="Center" Grid.Column="2" Margin="5 0 0 0">Имя:</TextBlock>
+            <TextBox VerticalAlignment="Center" Grid.Column="3" Text="{Binding EmplName}" x:Name="TB_Name"></TextBox>
+
+            <TextBlock VerticalAlignment="Center" Grid.Column="4" Margin="5 0 0 0">Отчество:</TextBlock>
+            <TextBox VerticalAlignment="Center" Grid.Column="5" Text="{Binding FatherName}" x:Name="TB_FatherName"></TextBox>
         </Grid>
         <ComboBox x:Name="ComboEmployeePosition" SelectedItem="{Binding Position}"
                 Grid.Row="2" Grid.Column="1" DisplayMemberPath="naimenovaniye"
