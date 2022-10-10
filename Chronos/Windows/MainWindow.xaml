@@ -8,6 +8,7 @@
         Title="Хронос" Height="600" Width="800"
         Closed="WindowClosed"
         Closing="WindowClosing">
+    <!--I <3 Git-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
