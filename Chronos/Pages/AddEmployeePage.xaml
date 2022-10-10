@@ -1,0 +1,115 @@
+﻿<Page x:Class="Chronos.Pages.AddEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Chronos.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Добавление и редактирование"
+      Style="{StaticResource base_page}"
+      IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="BtnSave" Grid.Row="11"
+                Content="Сохранить"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top" Width="120"
+                Click="BtnSave_Click" Grid.Column="1"
+                Grid.ColumnSpan="2"/>
+        
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Должность" Margin="20 0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Статус" Margin="20 0"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Телефон" Margin="20 0"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Паспорт (серия)" Margin="20 0"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Паспорт (номер)" Margin="20 0"/>
+        <TextBlock Grid.Row="10" Grid.Column="0" Text="История работ:"
+                    Margin="20 0" Height="30" VerticalAlignment="Top"/>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0">Фамилия:</TextBlock>
+            <TextBox Grid.Column="1" Text="{Binding EmplSurname}" x:Name="TB_SurName"></TextBox>
+            
+            <TextBlock Grid.Column="2" Margin="5 0 0 0">Имя:</TextBlock>
+            <TextBox Grid.Column="3" Text="{Binding EmplName}" x:Name="TB_Name"></TextBox>
+            
+            <TextBlock Grid.Column="4" Margin="5 0 0 0">Отчество:</TextBlock>
+            <TextBox Grid.Column="5" Text="{Binding FatherName}" x:Name="TB_FatherName"></TextBox>
+        </Grid>
+        <ComboBox x:Name="ComboEmployeePosition" SelectedItem="{Binding Position}"
+                Grid.Row="2" Grid.Column="1" DisplayMemberPath="naimenovaniye"
+                SelectedValuePath="id" />
+        <ComboBox x:Name="ComboEmployeeStatus" SelectedItem="{Binding Status}"
+                Grid.Row="3" Grid.Column="1" DisplayMemberPath="Naimenovaniye"
+                SelectedValuePath="id" />
+        <TextBox x:Name="TextBoxEmplTel" Text="{Binding Tel}"
+                Grid.Row="4" Grid.Column="1" Padding="0,2"/>
+        <TextBox x:Name="TextBoxPasportSeries"
+                Grid.Row="5" Grid.Column="1" Padding="0,2"
+                Text="{Binding PasportSeries}"/>
+        <TextBox x:Name="TextBoxPasportNum"
+                Grid.Row="6" Grid.Column="1" Padding="0,2"
+                 Text="{Binding PasportNumber}"/>
+        
+        <DataGrid x:Name="DtData" AutoGenerateColumns="False"
+                Grid.Row="10" Grid.Column="1" IsReadOnly="True"
+                Margin="0 0 30 0"
+                SelectionMode="Single "
+                LoadingRow="DtData_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ п"
+                    Visibility="Hidden"
+                    Binding="{Binding Employement.id}"/>
+                <DataGridTextColumn Header="Дата начала"
+                                    Width="0.8*"
+                                    Binding="{Binding DateStart}"/>
+                <DataGridTextColumn Header="Дата завершения"
+                                    Width="1.1*"
+                                    Binding="{Binding DateFinish}"/>
+                <DataGridTextColumn Header="Часов потрачено"
+                                    Width="1.1*"
+                                    Binding="{Binding HourSpent}"/>
+                <DataGridTextColumn Header="Описание"
+                                    Width="1.85*"
+                                    Binding="{Binding Description}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Vertical"
+                    VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button x:Name="btnAdd" Content="+" Click="btnAdd_Click"/>
+            <Button x:Name="btnDelete" Content="-" Click="btnDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
