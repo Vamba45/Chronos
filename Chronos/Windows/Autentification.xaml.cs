@@ -23,5 +23,22 @@ namespace Chronos.Windows
         {
             InitializeComponent();
         }
+
+        private StringBuilder CheckFields()
+        {
+            StringBuilder s = new StringBuilder();
+
+            if (string.IsNullOrWhiteSpace(Login.Text))
+                s.AppendLine("Поле \"Логин\" пустое");
+            if (string.IsNullOrWhiteSpace(Password.Password))
+                s.AppendLine("Поле \"Пароль\" пустое");
+
+            return s;
+        }
+
+        private void LogInButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

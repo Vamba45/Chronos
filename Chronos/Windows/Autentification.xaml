@@ -24,6 +24,6 @@
         <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Пароль" Grid.Column="0" Grid.Row="1"/>
         <PasswordBox Height="30" VerticalAlignment="Center" x:Name="Password" Grid.Column="1" Grid.Row="1"/>
 
-        <Button Content="Войти" Grid.Row="2" Grid.ColumnSpan="2" Width="100"/>
+        <Button Content="Войти" Name="LogInButton" Click="LogInButton_Click" Grid.Row="2" Grid.ColumnSpan="2" Width="100"/>
     </Grid>
 </Window>
