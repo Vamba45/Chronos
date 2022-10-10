@@ -86,7 +86,9 @@ namespace Chronos.Pages
 
         private void BtnPrev_Click(object sender, RoutedEventArgs e)
         {
-
+            if ((_pagenumber > 1))
+                _pagenumber--;
+            ListBoxPageCount.SelectedIndex = _pagenumber - 1;
         }
 
         private void ListBoxPageCount_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -96,7 +98,9 @@ namespace Chronos.Pages
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-
+            if ((_pagenumber < _pagecount))
+                _pagenumber++;
+            ListBoxPageCount.SelectedIndex = _pagenumber - 1;
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

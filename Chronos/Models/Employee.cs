@@ -34,6 +34,17 @@ namespace Chronos.Models
                 return $"Паспорт: {PasportSeries} {PasportNumber}";
             }
         }
+        public string GetTel
+        {
+            get
+            {
+                if(string.IsNullOrWhiteSpace(Tel))
+                {
+                    return $"Телефон: - ";
+                }
+                return $"Телефон: {Tel}";
+            }
+        }
 
         public int id { get; set; }
         public string EmplName { get; set; }

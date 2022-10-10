@@ -51,12 +51,10 @@
                                        Text="{Binding Path=GetFullName}"/>
                             <TextBlock Margin="2" FontSize="16"
                                         Width="Auto" HorizontalAlignment="Left"
-                                       Text="{Binding Path=Tel}"/>
-                            <TextBlock Margin="2" FontSize="16"
-                                        Width="Auto" HorizontalAlignment="Left"
                                        Text="{Binding Path=PasportData}"/>
                             <TextBlock Margin="2" FontSize="16"
-                                        Width="Auto" HorizontalAlignment="Left" />
+                                        Width="Auto" HorizontalAlignment="Left"
+                                       Text="{Binding Path=GetTel}"/>
                         </StackPanel>
                         <TextBlock Width="80" VerticalAlignment="Center"
                                         Grid.Column="2" Margin="5" FontSize="26" />
