@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Chronos.Windows"
         mc:Ignorable="d"
         Title="Аутентификация" Height="400" Width="550"
-        Style="{StaticResource base_window_1}">
+        Style="{StaticResource base_window_1}"
+        WindowStartupLocation="CenterScreen">
     <Grid Margin="90">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>

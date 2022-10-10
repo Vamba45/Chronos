@@ -38,7 +38,24 @@ namespace Chronos.Windows
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
+            if(CheckFields().Length == 0)
+            {
+                if(Login.Text == "User" && Password.Password == "123456789")
+                {
+                    MainWindow main = new MainWindow(false);
+                    main.Show();
 
+                    this.Close();
+                }
+
+                if (Login.Text == "Admin" && Password.Password == "SWSUCase")
+                {
+                    MainWindow main = new MainWindow(true);
+                    main.Show();
+
+                    this.Close();
+                }
+            }
         }
     }
 }

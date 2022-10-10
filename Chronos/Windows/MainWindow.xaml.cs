@@ -10,9 +10,16 @@ namespace Chronos
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private bool mode = false;
+        public MainWindow(bool mode_)
         {
             InitializeComponent();
+
+            mode = mode_;
+
+            if(!mode)
+                BtnEditEmployes.IsEnabled = false;
+
             MainFrame.Navigate(new CatalogOfEmployee());
             Manager.MainFrame = MainFrame; 
         }
