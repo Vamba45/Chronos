@@ -1,0 +1,29 @@
+﻿<Window x:Class="Chronos.Windows.Autentification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chronos.Windows"
+        mc:Ignorable="d"
+        Title="Аутентификация" Height="400" Width="550"
+        Style="{StaticResource base_window_1}">
+    <Grid Margin="90">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Логин" Grid.Column="0" Grid.Row="0"/>
+        <TextBox Height="30" VerticalAlignment="Center" x:Name="Login" Grid.Column="1" Grid.Row="0"/>
+
+        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Пароль" Grid.Column="0" Grid.Row="1"/>
+        <PasswordBox Height="30" VerticalAlignment="Center" x:Name="Password" Grid.Column="1" Grid.Row="1"/>
+
+        <Button Content="Войти" Grid.Row="2" Grid.ColumnSpan="2" Width="100"/>
+    </Grid>
+</Window>
