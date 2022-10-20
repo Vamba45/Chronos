@@ -2,6 +2,7 @@
 using System.Windows;
 using Chronos.Models;
 using Chronos.Pages;
+using Chronos.Windows;
 
 namespace Chronos
 {
@@ -40,7 +41,6 @@ namespace Chronos
 
         private void WindowClosed(object sender, EventArgs e)
         {
-            App.Current.Shutdown();
         }
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -58,6 +58,15 @@ namespace Chronos
         private void BtnEditEmployes_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new EmployeePage());
+        }
+
+        private void btnOut_Click(object sender, RoutedEventArgs e)
+        {
+            Autentification aut = new Autentification();
+
+            this.Close();
+
+            aut.Show();
         }
     }
 }

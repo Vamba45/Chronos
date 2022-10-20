@@ -16,9 +16,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid Background="{StaticResource additional}"/>
-        <Image Source="Chronos.png"
-                Margin="10"
-                HorizontalAlignment="Left"/>
+        <Button HorizontalAlignment="Left" Name="btnOut" Click="btnOut_Click">Выйти</Button>
         <TextBlock Grid.Row="0" Text="Хронос"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
